@@ -1,1 +1,1 @@
-# React + TypeScript + Vite
+# Excuse or yes
