@@ -11,27 +11,27 @@ export function App() {
   return (
     <div
       className={css({
-        "backgroundColor": theme.palette.background.default,
+        //"height": "100vh",
         "color": theme.palette.text.primary,
         "fontFamily": theme.typography.fontFamily,
         "fontSize": theme.typography.fontSize,
-        "height": "100vh",
         "display": "flex",
+        "flexDirection": "column",
         "alignItems": "center",
-        "justifyContent": "center",
+        //"justifyContent": "center",
+        "backgroundColor": theme.palette.background.default,
       })}
     >
 
       <h1
         className={css({
+          "marginTop": theme.spacing(10),
           "fontSize": theme.spacing(4),
           "font": theme.typography.fontFamily,
           "color": theme.palette.primary.main,
         })}>
         Vas-tu m'excuser ?
       </h1>
-
-   
 
     </div>
   );
