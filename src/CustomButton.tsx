@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles";
 import { useStyles } from "tss-react";
+import { useState } from "react";
 
 type Props = {
     className?: string;
@@ -10,9 +11,22 @@ type Props = {
 }
 
 export function ButtonZone(props: Props) {
-    const { className, sticker, onPageChange } = props;
+    const { onPageChange } = props;
 
     const { css, cx } = useStyles();
+
+    const [buttonStyle, setButtonStyle] = useState({});
+
+    const moveButton = () => {
+        const x = Math.random() * (window.innerWidth - 100) - 85;
+        const y = Math.random() * (window.innerHeight - 50) - 45;
+        setButtonStyle({
+            "position": "absolute",
+            "left": `${x}px`,
+            "top": `${y}px`,
+            "transition": 'left 0.5s, top 0.5s ease-in-out'
+        });
+    }
 
     return (
         <div
@@ -29,15 +43,16 @@ export function ButtonZone(props: Props) {
                 onMouseOver={() => {
                     onPageChange("second");
                 }}
-                onMouseOut={() => { 
+                onMouseOut={() => {
                     onPageChange("first");
                 }}
             >
-                Yes
+                Oui
             </CustomButton>
             <CustomButton
-                onClick={() => onPageChange(sticker)}
-                onMouseOver={() => {}}
+                onClick={moveButton}
+                onMouseOver={moveButton}
+                style={buttonStyle}
             >
                 Non
             </CustomButton>
@@ -52,10 +67,11 @@ type CustomButtonProps = {
     onClick: () => void;
     onMouseOver: () => void;
     onMouseOut?: () => void;
+    style?: React.CSSProperties;
 }
 
 export function CustomButton(props: CustomButtonProps) {
-    const { className, onClick, children, onMouseOver, onMouseOut } = props;
+    const { className, onClick, children, onMouseOver, onMouseOut, style } = props;
 
     const { css, cx } = useStyles();
 
@@ -80,9 +96,9 @@ export function CustomButton(props: CustomButtonProps) {
             onClick={onClick}
             onMouseOver={onMouseOver}
             onMouseOut={onMouseOut}
+            style={style}
         >
             {children}
         </Button >
     )
 }
-
