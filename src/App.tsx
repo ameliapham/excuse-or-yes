@@ -1,3 +1,4 @@
+import Typography from "@mui/material/Typography";
 import { useState } from "react"
 import { useTheme } from "@mui/material/styles"
 import { useStyles } from "tss-react"
@@ -22,17 +23,15 @@ export function App() {
         "backgroundColor": theme.palette.background.default,
       })}
     >
-
-      <h1
-        className={css({
-          "marginTop": theme.spacing(10),
-          "fontSize": theme.spacing(4),
-          "font": theme.typography.fontFamily,
-          "color": theme.palette.primary.main,
-        })}>
+      <Typography
+        variant="h4"
+        color="primary"
+        fontFamily={theme.typography.fontFamily}
+        marginTop={theme.spacing(10)}
+      >
         Vas-tu m'excuser ?
-      </h1>
-
+      </Typography>
+      
       <div
         className={css({
 
@@ -41,6 +40,8 @@ export function App() {
         <img src="https://media.giphy.com/media/lPM06f2zvk94jBAzlP/giphy.gif" alt="memes cries" />
 
       </div>
+
+
 
 
     </div>
