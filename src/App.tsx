@@ -1,9 +1,11 @@
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useState } from "react"
+//import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles"
 import { useStyles } from "tss-react"
-import { CustomButton } from "./CustomButton"
+import { ButtonZone } from "./CustomButton"
+import { useState } from "react";
+import { FirstSticker } from "./pages/FirstSticker"
+import { SecondSticker } from "./pages/SecondSticker"
+
 
 export function App() {
 
@@ -11,57 +13,43 @@ export function App() {
 
   const { css } = useStyles();
 
+  const [sticker, setStickers] = useState<"first" | "second" | "third">("first");
+
   return (
     <div
       className={css({
-        //"height": "100vh",
         "color": theme.palette.text.primary,
         "fontFamily": theme.typography.fontFamily,
         "fontSize": theme.typography.fontSize,
         "display": "flex",
         "flexDirection": "column",
         "alignItems": "center",
-        //"justifyContent": "center",
-        "backgroundColor": theme.palette.background.default,
       })}
     >
-      <Typography
-        variant="h4"
-        color="primary"
-        fontFamily={theme.typography.fontFamily}
-        marginTop={theme.spacing(10)}
-      >
-        Vas-tu m'excuser ?
-      </Typography>
-
       <div
         className={css({
 
         })}
       >
-        <img src="https://media.giphy.com/media/lPM06f2zvk94jBAzlP/giphy.gif" alt="memes cries" />
+        {(() => {
+          switch (sticker) {
+            case "first":
+              return <FirstSticker />;
+            case "second":
+              return <SecondSticker />;
+          }
+        })()}
 
       </div>
 
-      <div
-        className={css({
-          "width": "200px",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "space-around",
-        })}
-      >
-        <CustomButton
-          onClick={() => alert("Merci")}
-        >
-          Yes
-        </CustomButton>
-        <CustomButton
-          onClick={() => alert("Merci")}
-        >
-          Non
-        </CustomButton>
-      </div>
+      <ButtonZone
+        sticker={sticker}
+        onPageChange={sticker => {
+          setStickers(sticker);
+        }}
+      />
+
+
 
 
     </div>
