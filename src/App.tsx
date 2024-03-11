@@ -1,7 +1,9 @@
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import { useState } from "react"
 import { useTheme } from "@mui/material/styles"
 import { useStyles } from "tss-react"
+import { CustomButton } from "./CustomButton"
 
 export function App() {
 
@@ -31,7 +33,7 @@ export function App() {
       >
         Vas-tu m'excuser ?
       </Typography>
-      
+
       <div
         className={css({
 
@@ -41,7 +43,25 @@ export function App() {
 
       </div>
 
-
+      <div
+        className={css({
+          "width": "200px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+        })}
+      >
+        <CustomButton
+          onClick={() => alert("Merci")}
+        >
+          Yes
+        </CustomButton>
+        <CustomButton
+          onClick={() => alert("Merci")}
+        >
+          Non
+        </CustomButton>
+      </div>
 
 
     </div>
