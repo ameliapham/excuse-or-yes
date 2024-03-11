@@ -33,6 +33,16 @@ export function App() {
         Vas-tu m'excuser ?
       </h1>
 
+      <div
+        className={css({
+
+        })}
+      >
+        <img src="https://media.giphy.com/media/lPM06f2zvk94jBAzlP/giphy.gif" alt="memes cries" />
+
+      </div>
+
+
     </div>
   );
 
