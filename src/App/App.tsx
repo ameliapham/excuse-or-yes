@@ -28,6 +28,10 @@ export function App() {
         });
     }
 
+    if(sticker === "Call") {
+        return <Call />
+    }
+
     return (
         <div className={classes.root}>
             <GlobalStyles
@@ -49,8 +53,6 @@ export function App() {
                             return <FirstSticker />;
                         case "second":
                             return <SecondSticker />;
-                        case "Call":
-                            return <Call />;
                     }
                 })()}
             </div>
