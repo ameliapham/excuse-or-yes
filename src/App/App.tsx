@@ -16,7 +16,7 @@ export function App() {
                         "margin": 0,
                         "display": "flex",
                         "justifyContent": "center",
-                        "backgroundColor": "#ffe5ec",
+                        "backgroundColor": theme.palette.background.default,
                         "alignItems": "center"
                     }
                 }}
@@ -58,7 +58,7 @@ const useStyles = tss.create(() => ({
     "buttonZone": {
         "display": "flex",
         "justifyContent": "space-around",
-        "width": "300px",
+        "width": "200px",
         "alignItems": "center",
         "marginTop": "10px"
 
