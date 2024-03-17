@@ -1,13 +1,20 @@
 import { tss } from "tss-react/mui";
 import { theme } from "../theme";
 import { GlobalStyles } from "tss-react";
-import { CustomButton } from "../components/CustomButton";
-import { FirstSticker } from "../pages/FirstSticker";
 import { useState } from "react";
 
-export function App() {
-    const { cx, classes } = useStyles();
+import { CustomButton } from "../components/CustomButton";
+import { FirstSticker } from "../shared/FirstSticker";
+import { SecondSticker } from "../shared/SecondSticker";
+import { Call } from "../pages/Call";
 
+export function App() {
+    const { classes } = useStyles();
+
+    const [sticker, setStickers] = useState<"first" | "second" | "Call">("first");
+
+    const onStickerChange = (sticker: "first" | "second" | "Call") => {setStickers(sticker)}
+    
     return (
         <div className={classes.root}>
             <GlobalStyles
@@ -22,12 +29,25 @@ export function App() {
                 }}
             />
 
-            <FirstSticker></FirstSticker>
+            <div>
+                {(() => {
+                    switch (sticker) {
+                        case "first":
+                            return <FirstSticker />;
+                        case "second":
+                            return <SecondSticker />;
+                        case "Call":
+                            return <Call />;
+                    }
+                })()}
+            </div>
 
             <div className = {classes.buttonZone}>
                 <CustomButton
                     variant="contained"
-                    onClick={() => console.log("Hello World")}
+                    onMouseOver={() => onStickerChange("second")}
+                    onMouseOut={() => onStickerChange("first")}
+                    onClick={() => onStickerChange("Call")}
                 >
                     Oui
                 </CustomButton>
