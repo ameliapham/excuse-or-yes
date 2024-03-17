@@ -75,11 +75,6 @@ export function App() {
                     Non
                 </CustomButton>
             </div>
-
-
-
-
-
         </div>
     )
 }
@@ -93,11 +88,10 @@ const useStyles = tss.create(() => ({
         "marginBottom": "100px"
     },
     "buttonZone": {
-        "display": "flex",
-        "justifyContent": "space-around",
-        "width": "200px",
+        "display": "block flex",
+        "justifyContent": "space-between",
+        "width": "150px",
         "alignItems": "center",
         "marginTop": "10px"
-
     }
 }));
