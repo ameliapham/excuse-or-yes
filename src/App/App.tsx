@@ -1,4 +1,4 @@
-import { useStyles } from "tss-react/mui";
+import { tss } from "tss-react/mui";
 import { theme } from "../theme";
 import { GlobalStyles } from "tss-react";
 import { CustomButton } from "../components/CustomButton";
@@ -47,3 +47,20 @@ export function App() {
     )
 }
 
+const useStyles = tss.create(() => ({
+    "root": {
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "marginBottom": "100px"
+    },
+    "buttonZone": {
+        "display": "flex",
+        "justifyContent": "space-around",
+        "width": "300px",
+        "alignItems": "center",
+        "marginTop": "10px"
+
+    }
+}));
