@@ -9,12 +9,25 @@ import { SecondSticker } from "../shared/SecondSticker";
 import { Call } from "../pages/Call";
 
 export function App() {
-    const { classes } = useStyles();
+    const { css, classes } = useStyles();
 
     const [sticker, setStickers] = useState<"first" | "second" | "Call">("first");
 
     const onStickerChange = (sticker: "first" | "second" | "Call") => {setStickers(sticker)}
     
+    const [buttonStyle, setButtonStyle] = useState({});
+
+    const moveButton = () => {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        setButtonStyle({
+            "position": "absolute",
+            "left": `${x}px`,
+            "top": `${y}px`,
+            "transition": 'left 0.3s, top 0.3s ease-in-out'
+        });
+    }
+
     return (
         <div className={classes.root}>
             <GlobalStyles
@@ -53,7 +66,9 @@ export function App() {
                 </CustomButton>
                 <CustomButton
                     variant="contained"
-                    onClick={() => console.log("Hello World")}
+                    onMouseOver={moveButton}
+                    onClick={moveButton}
+                    className={css(buttonStyle)}
                 >
                     Non
                 </CustomButton>
