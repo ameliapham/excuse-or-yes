@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { tss } from 'tss-react/mui';
 
-type CustomButtonProps = {
+export type CustomButtonProps = {
     href?: string;
     className?: string;
     onClick?: () => void;
