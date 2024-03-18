@@ -2,19 +2,21 @@ import { tss } from "tss-react/mui";
 import { theme } from "../theme";
 import { GlobalStyles } from "tss-react";
 import { useState } from "react";
+import { declareComponentKeys } from "i18nifty"
 
 import { CustomButton } from "../components/CustomButton";
 import { FirstSticker } from "../shared/FirstSticker";
 import { SecondSticker } from "../shared/SecondSticker";
 import { Call } from "../pages/Call";
+import { useTranslation } from "../i18n";
 
 export function App() {
     const { css, classes } = useStyles();
 
     const [sticker, setStickers] = useState<"first" | "second" | "Call">("first");
 
-    const onStickerChange = (sticker: "first" | "second" | "Call") => {setStickers(sticker)}
-    
+    const onStickerChange = (sticker: "first" | "second" | "Call") => { setStickers(sticker) }
+
     const [buttonStyle, setButtonStyle] = useState({});
 
     const moveButton = () => {
@@ -28,9 +30,11 @@ export function App() {
         });
     }
 
-    if(sticker === "Call") {
+    if (sticker === "Call") {
         return <Call />
     }
+
+    const { t } = useTranslation({ App });
 
     return (
         <div className={classes.root}>
@@ -57,14 +61,14 @@ export function App() {
                 })()}
             </div>
 
-            <div className = {classes.buttonZone}>
+            <div className={classes.buttonZone}>
                 <CustomButton
                     variant="contained"
                     onMouseOver={() => onStickerChange("second")}
                     onMouseOut={() => onStickerChange("first")}
                     onClick={() => onStickerChange("Call")}
                 >
-                    Oui
+                    {t("Yes")}
                 </CustomButton>
                 <CustomButton
                     variant="contained"
@@ -72,7 +76,7 @@ export function App() {
                     onClick={moveButton}
                     className={css(buttonStyle)}
                 >
-                    Non
+                    {t("No")}
                 </CustomButton>
             </div>
         </div>
@@ -95,3 +99,8 @@ const useStyles = tss.create(() => ({
         "marginTop": "10px"
     }
 }));
+
+export const { i18n } = declareComponentKeys<
+    | "Yes"
+    | "No"
+>()({ App });
