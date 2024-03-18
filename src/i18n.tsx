@@ -21,6 +21,7 @@ export const {
 } = createI18nApi<
 		| typeof import("./App/App").i18n
         | typeof import("./shared/FirstSticker").i18n
+        | typeof import("./shared/SecondSticker").i18n
 >()(
     {
         languages,
@@ -34,6 +35,9 @@ export const {
 	        },
             "FirstSticker": {
                 "Will you excuse me?": "Will you excuse me?"
+            },
+            "SecondSticker": {
+                "Really?": "Really?"
             }
         },
         /* spell-check: disable */
@@ -44,6 +48,9 @@ export const {
 	        },
             "FirstSticker": {
                 "Will you excuse me?": "Vas-tu m'excuser ?"
+            },
+            "SecondSticker": {
+                "Really?": "Vraiment ?"
             }
         },
         /* spell-check: enable */

@@ -1,10 +1,14 @@
 import  Typography  from "@mui/material/Typography"
 //import { theme } from "../theme"
 import { tss } from "tss-react/mui"
+import { declareComponentKeys } from "i18nifty"
+import { useTranslation } from "../i18n"
 
 
 export function SecondSticker() {
     const { classes } = useStyles();
+
+    const { t } = useTranslation({ SecondSticker });
 
     return (
         <div
@@ -15,7 +19,7 @@ export function SecondSticker() {
                 color="primary"
                 className={classes.typography}
             >
-                Really ?
+                {t("Really?")}
             </Typography>
 
             <div>
@@ -36,3 +40,7 @@ const useStyles = tss.create(({theme}) => ({
         "marginTop": theme.spacing(10),
     }
 }));
+
+export const { i18n } = declareComponentKeys<
+    | "Really?"
+>()({ SecondSticker });
