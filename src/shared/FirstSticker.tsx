@@ -1,10 +1,14 @@
 import Typography from "@mui/material/Typography"
 //import { theme } from "../theme"
 import { tss } from "tss-react/mui"
+import { declareComponentKeys } from "i18nifty"
+import { useTranslation } from "../i18n"
 
 
 export function FirstSticker() {
     const { classes } = useStyles();
+
+    const { t } = useTranslation({ FirstSticker });
 
     return (
         <div className={classes.root}>
@@ -13,7 +17,7 @@ export function FirstSticker() {
                 color="primary"
                 className={classes.typography}
             >
-                Vas-tu m'excuser ?
+                {t("Will you excuse me?")}
             </Typography>
 
             <div>
@@ -34,3 +38,7 @@ const useStyles = tss.create(({theme}) => ({
         "marginTop": theme.spacing(10),
     }
 }));
+
+export const { i18n } = declareComponentKeys<
+    | "Will you excuse me?"
+>()({ FirstSticker });

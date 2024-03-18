@@ -20,6 +20,7 @@ export const {
     useResolveLocalizedString,
 } = createI18nApi<
 		| typeof import("./App/App").i18n
+        | typeof import("./shared/FirstSticker").i18n
 >()(
     {
         languages,
@@ -31,7 +32,9 @@ export const {
 		        "Yes": "Yes",
 		        "No": "No",
 	        },
-  
+            "FirstSticker": {
+                "Will you excuse me?": "Will you excuse me?"
+            }
         },
         /* spell-check: disable */
         "fr": {
@@ -39,7 +42,9 @@ export const {
 		        "Yes": "Oui",
 		        "No": "Non",
 	        },
-     
+            "FirstSticker": {
+                "Will you excuse me?": "Vas-tu m'excuser ?"
+            }
         },
         /* spell-check: enable */
     }
