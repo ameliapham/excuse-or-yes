@@ -1,9 +1,13 @@
 import Typography from "@mui/material/Typography"
 import { tss } from "tss-react/mui"
+import { declareComponentKeys } from "i18nifty"
+import { useTranslation } from "../i18n"
 
 
 export function ThirdSticker() {
     const { classes } = useStyles();
+
+    const { t } = useTranslation({ ThirdSticker });
 
     return (
         <div
@@ -14,7 +18,7 @@ export function ThirdSticker() {
                 color="primary"
                 className={classes.typography}
             >
-                Vas-tu m'appeler ?
+                {t("Will you call me?")}
             </Typography>
 
             <div>
@@ -35,3 +39,7 @@ const useStyles = tss.create(({ theme }) => ({
         "marginTop": theme.spacing(10),
     }
 }));
+
+export const { i18n } = declareComponentKeys<
+    | "Will you call me?"
+>()({ ThirdSticker });

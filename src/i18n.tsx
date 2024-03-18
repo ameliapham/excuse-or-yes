@@ -22,6 +22,7 @@ export const {
 		| typeof import("./App/App").i18n
         | typeof import("./shared/FirstSticker").i18n
         | typeof import("./shared/SecondSticker").i18n
+        | typeof import("./shared/ThirdSticker").i18n
 >()(
     {
         languages,
@@ -38,6 +39,9 @@ export const {
             },
             "SecondSticker": {
                 "Really?": "Really?"
+            },
+            "ThirdSticker": {
+                "Will you call me?": "Will you call me?"
             }
         },
         /* spell-check: disable */
@@ -51,6 +55,9 @@ export const {
             },
             "SecondSticker": {
                 "Really?": "Vraiment ?"
+            },
+            "ThirdSticker": {
+                "Will you call me?": "Tu m'appelleras ?"
             }
         },
         /* spell-check: enable */
