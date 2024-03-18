@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-explicit-any': "off",
+    'tss-unused-classes/unused-classes': 'warn',
+    'react-refresh/only-export-components': 'off'
   },
 }
