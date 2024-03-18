@@ -23,6 +23,7 @@ export const {
         | typeof import("./shared/FirstSticker").i18n
         | typeof import("./shared/SecondSticker").i18n
         | typeof import("./shared/ThirdSticker").i18n
+        | typeof import("./pages/Call").i18n
 >()(
     {
         languages,
@@ -42,6 +43,10 @@ export const {
             },
             "ThirdSticker": {
                 "Will you call me?": "Will you call me?"
+            },
+            "Call": {
+                "Yes": "Yes",
+                "No": "No"
             }
         },
         /* spell-check: disable */
@@ -58,6 +63,10 @@ export const {
             },
             "ThirdSticker": {
                 "Will you call me?": "Tu m'appelleras ?"
+            },
+            "Call": {
+                "Yes": "Oui",
+                "No": "Non"
             }
         },
         /* spell-check: enable */
