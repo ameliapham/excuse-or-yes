@@ -1,8 +1,8 @@
 import Typography from "@mui/material/Typography"
 //import { theme } from "../theme"
 import { tss } from "tss-react/mui"
-import { declareComponentKeys } from "i18nifty"
-import { useTranslation } from "../i18n"
+//import { declareComponentKeys } from "i18nifty"
+import { declareComponentKeys, useTranslation } from "../i18n/index";
 
 
 export function FirstSticker() {
