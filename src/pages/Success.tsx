@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography"
-import { theme } from "../theme"
+import { theme } from "theme"
 import { tss } from "tss-react/mui"
 import { GlobalStyles } from "@mui/material"
 

@@ -1,9 +1,9 @@
-import { theme } from "../theme"
+import { theme } from "theme"
 import { tss } from "tss-react/mui"
 import { GlobalStyles } from "@mui/material"
-import { CustomButton } from "../components/CustomButton"
+import { CustomButton } from "components/CustomButton"
 import { Success } from "./Success"
-import { ThirdSticker } from "../shared/ThirdSticker"
+import { ThirdSticker } from "shared/ThirdSticker"
 import { useState } from "react";
 import { declareComponentKeys, useTranslation } from "i18n";
 
