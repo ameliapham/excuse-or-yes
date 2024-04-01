@@ -1,10 +1,10 @@
 import type { Translations } from '../types';
 
 export const translations: Translations<"en"> = {
-    /*"App": {
+    "App": {
         "Yes": "Yes",
         "No": "No",
-    },*/
+    },
     "FirstSticker": {
         "Will you excuse me?": "Will you excuse me?"
     },
@@ -14,8 +14,8 @@ export const translations: Translations<"en"> = {
     "ThirdSticker": {
         "Will you call me?": "Will you call me?"
     },
-    /*"Call": {
+    "Call": {
         "Yes": "Yes",
         "No": "No"
-    }*/
+    }
 };

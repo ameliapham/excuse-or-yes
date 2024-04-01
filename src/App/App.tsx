@@ -2,13 +2,12 @@ import { tss } from "tss-react/mui";
 import { theme } from "../theme";
 import { GlobalStyles } from "tss-react";
 import { useState } from "react";
-//import { declareComponentKeys } from "i18nifty"
 
 import { CustomButton } from "../components/CustomButton";
 import { FirstSticker } from "../shared/FirstSticker";
 import { SecondSticker } from "../shared/SecondSticker";
 import { Call } from "../pages/Call";
-//import { declareComponentKeys, useTranslation } from "../i18n/index";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 export function App() {
     const { css, classes } = useStyles();
@@ -34,7 +33,7 @@ export function App() {
         return <Call />
     }
 
-    //const { t } = useTranslation({ App });
+    const { t } = useTranslation({ App });
 
     return (
         <div className={classes.root}>
@@ -68,7 +67,7 @@ export function App() {
                     onMouseOut={() => onStickerChange("first")}
                     onClick={() => onStickerChange("Call")}
                 >
-                    Yes
+                    {t("Yes")}
                 </CustomButton>
                 <CustomButton
                     variant="contained"
@@ -76,7 +75,7 @@ export function App() {
                     onClick={moveButton}
                     className={css(buttonStyle)}
                 >
-                    No
+                    {t("No")}
                 </CustomButton>
             </div>
         </div>
@@ -99,8 +98,8 @@ const useStyles = tss.create(() => ({
         "marginTop": "10px"
     }
 }));
-/*
+
 export const { i18n } = declareComponentKeys<
     | "Yes"
     | "No"
->()({ App });*/
+>()({ App });

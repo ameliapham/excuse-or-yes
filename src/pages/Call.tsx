@@ -5,8 +5,7 @@ import { CustomButton } from "../components/CustomButton"
 import { Success } from "./Success"
 import { ThirdSticker } from "../shared/ThirdSticker"
 import { useState } from "react";
-//import { declareComponentKeys } from "i18nifty"
-//import { declareComponentKeys, useTranslation } from "../i18n/index";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 
 export function Call() {
@@ -33,7 +32,7 @@ export function Call() {
         return <Success />
     }
 
-    //const { t } = useTranslation({ Call });
+    const { t } = useTranslation({ Call });
 
     return (
         <div className={classes.root}>
@@ -58,7 +57,7 @@ export function Call() {
                     variant="contained"
                     onClick={() => onPageChange("Success")}
                 >
-                    Yes
+                    {t("Yes")}
                 </CustomButton>
 
                 <CustomButton
@@ -67,7 +66,7 @@ export function Call() {
                     onClick={moveButton}
                     className={css(buttonStyle)}
                 >
-                    No
+                    {t("No")}
                 </CustomButton>
             </div>
 
@@ -96,8 +95,8 @@ const useStyles = tss.create(({ theme }) => ({
     }
 }));
 
-/*
+
 export const { i18n } = declareComponentKeys<
     | "Yes"
     | "No"
->()({ Call });*/
+>()({ Call });
