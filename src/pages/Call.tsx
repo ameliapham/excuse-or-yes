@@ -5,35 +5,31 @@ import { CustomButton } from "../components/CustomButton"
 import { Success } from "./Success"
 import { ThirdSticker } from "../shared/ThirdSticker"
 import { useState } from "react";
-//import { declareComponentKeys } from "i18nifty"
-//import { declareComponentKeys, useTranslation } from "../i18n/index";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 
 export function Call() {
-    const { css, classes } = useStyles();
+
+    const [movingButtonPosition, setMovingButtonPosition] = useState({ "x": 0, "y": 0 });
+
+    const { classes } = useStyles({ movingButtonPosition });
 
     const [page, setPage] = useState<"Call" | "Success">("Call");
 
     const onPageChange = (page: "Call" | "Success") => { setPage(page) };
 
-    const [buttonStyle, setButtonStyle] = useState({});
+    const { t } = useTranslation({ Call });
 
     const moveButton = () => {
         const x = Math.random() * (window.innerWidth - 100);
         const y = Math.random() * (window.innerHeight - 50);
-        setButtonStyle({
-            "position": "absolute",
-            "left": `${x}px`,
-            "top": `${y}px`,
-            "transition": 'left 0.5s, top 0.5s ease-in-out'
-        });
+
+        setMovingButtonPosition({ x, y });
     }
 
     if (page === "Success") {
         return <Success />
     }
-
-    //const { t } = useTranslation({ Call });
 
     return (
         <div className={classes.root}>
@@ -58,16 +54,16 @@ export function Call() {
                     variant="contained"
                     onClick={() => onPageChange("Success")}
                 >
-                    Yes
+                    {t("Yes")}
                 </CustomButton>
 
                 <CustomButton
                     variant="contained"
                     onMouseOver={moveButton}
                     onClick={moveButton}
-                    className={css(buttonStyle)}
+                    className={classes.movingButton}
                 >
-                    No
+                    {t("No")}
                 </CustomButton>
             </div>
 
@@ -77,27 +73,30 @@ export function Call() {
     )
 }
 
-const useStyles = tss.create(({ theme }) => ({
-    "root": {
-        "display": "flex",
-        "flexDirection": "column",
-        "alignItems": "center",
-    },
-    "typography": {
-        "fontFamily": theme.typography.fontFamily,
-        "marginTop": theme.spacing(10),
-    },
-    "buttonZone": {
-        "display": "block flex",
-        "justifyContent": "space-between",
-        "width": "150px",
-        "alignItems": "center",
-        "marginTop": "10px"
-    }
-}));
+const useStyles = tss
+    .withParams<{ movingButtonPosition: { x: number, y: number } }>()
+    .create(({ movingButtonPosition }) => ({
+        "root": {
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+        },
+        "buttonZone": {
+            "display": "block flex",
+            "justifyContent": "space-between",
+            "width": "150px",
+            "alignItems": "center",
+            "marginTop": "10px"
+        },
+        "movingButton": {
+            "position": "absolute",
+            "left": `${movingButtonPosition.x}px`,
+            "top": `${movingButtonPosition.y}px`,
+            "transition": 'left 0.5s, top 0.5s ease-in-out'
+        }
+    }));
 
-/*
 export const { i18n } = declareComponentKeys<
     | "Yes"
     | "No"
->()({ Call });*/
+>()({ Call });
