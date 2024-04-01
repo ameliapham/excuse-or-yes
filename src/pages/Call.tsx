@@ -5,7 +5,7 @@ import { CustomButton } from "../components/CustomButton"
 import { Success } from "./Success"
 import { ThirdSticker } from "../shared/ThirdSticker"
 import { useState } from "react";
-import { declareComponentKeys, useTranslation, useLang } from "i18n";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 
 export function Call() {
@@ -19,8 +19,6 @@ export function Call() {
     const onPageChange = (page: "Call" | "Success") => { setPage(page) };
 
     const { t } = useTranslation({ Call });
-
-    console.log(useLang());
 
     const moveButton = () => {
         const x = Math.random() * (window.innerWidth - 100);
