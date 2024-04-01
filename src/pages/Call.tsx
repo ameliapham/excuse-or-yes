@@ -5,7 +5,7 @@ import { CustomButton } from "../components/CustomButton"
 import { Success } from "./Success"
 import { ThirdSticker } from "../shared/ThirdSticker"
 import { useState } from "react";
-import { declareComponentKeys, useTranslation } from "i18n";
+import { declareComponentKeys, useTranslation, useLang } from "i18n";
 
 
 export function Call() {
@@ -20,12 +20,15 @@ export function Call() {
 
     const { t } = useTranslation({ Call });
 
+    console.log(useLang());
+
     const moveButton = () => {
         const x = Math.random() * (window.innerWidth - 100);
         const y = Math.random() * (window.innerHeight - 50);
 
         setMovingButtonPosition({ x, y });
     }
+
 
     if (page === "Success") {
         return <Success />

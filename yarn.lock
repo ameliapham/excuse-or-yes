@@ -1597,12 +1597,12 @@ hoist-non-react-statics@^3.3.1:
   dependencies:
     react-is "^16.7.0"
 
-i18nifty@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/i18nifty/-/i18nifty-3.2.0.tgz#277676d20893b12fad9199e71aa5564f81b66f41"
-  integrity sha512-6+WgmW4oZOoUiQp9Hik4d+uDeO9LBeTrcEvOIuIYOkIo7W/s/BVKlDtpXn1JGaH3thy9iEtZ9sxx/fhxDo2aUQ==
+i18nifty@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/i18nifty/-/i18nifty-3.2.1.tgz#ee27e76cfdb8591d26ac980063567fac75a19c11"
+  integrity sha512-/exQ7rch7erPczJVy8gL+BD7TT24FfLFUvpLV1QW23tDB+tatq4/BN6j2V6nvADtn5GCFkhmWBe8ZzavDjQ3fQ==
   dependencies:
-    powerhooks "^1.0.5"
+    powerhooks "^1.0.9"
     tsafe "^1.6.5"
 
 ignore@^5.2.0, ignore@^5.2.4:
@@ -1957,10 +1957,10 @@ postcss@^8.4.35:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-powerhooks@^1.0.5:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-1.0.8.tgz#e64e10b7f9cb2f367a3e92da2be8d2373f3d2418"
-  integrity sha512-BJJIJ5G/aT65Pbu7zAoOgK1NsWcRmho0W4sRSbKen/pqemkxG+2YsX4d8c2j6cbE1ldnN0muf76YnV5k4RwURw==
+powerhooks@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-1.0.9.tgz#a0835855b215999d2e03258a652500a012eee865"
+  integrity sha512-G2OWxB36sYPcz+KehB/6RJSE5DWPeWxpOgHZXJUCzyQ9AsSABwUNibrWVp7HwwNlIUpVpvKvQ1zpi8Fs6tyTxg==
   dependencies:
     evt "^2.5.7"
     memoizee "^0.4.15"
