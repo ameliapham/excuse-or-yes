@@ -1,12 +1,12 @@
 import { tss } from "tss-react/mui";
-import { theme } from "../theme";
+import { theme } from "theme";
 import { GlobalStyles } from "tss-react";
 import { useState } from "react";
 
-import { CustomButton } from "../components/CustomButton";
-import { FirstSticker } from "../shared/FirstSticker";
-import { SecondSticker } from "../shared/SecondSticker";
-import { Call } from "../pages/Call";
+import { CustomButton } from "components/CustomButton";
+import { FirstSticker } from "shared/FirstSticker";
+import { SecondSticker } from "shared/SecondSticker";
+import { Call } from "pages/Call";
 import { declareComponentKeys, useTranslation } from "i18n";
 
 export function App() {
