@@ -8,7 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <I18nFetchingSuspense fallback={null}>
     <ThemeProvider theme={theme}>
       <App />
-
     </ThemeProvider>
   </I18nFetchingSuspense>
 )
