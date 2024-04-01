@@ -28,11 +28,11 @@ export function Call() {
         });
     }
 
+    const { t } = useTranslation({ Call });
+
     if (page === "Success") {
         return <Success />
     }
-
-    const { t } = useTranslation({ Call });
 
     return (
         <div className={classes.root}>

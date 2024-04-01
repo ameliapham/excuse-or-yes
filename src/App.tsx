@@ -29,11 +29,11 @@ export function App() {
         });
     }
 
+    const { t } = useTranslation({ App });
+
     if (sticker === "Call") {
         return <Call />
     }
-
-    const { t } = useTranslation({ App });
 
     return (
         <div className={classes.root}>
