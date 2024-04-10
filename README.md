@@ -1,2 +1,3 @@
 # Excuse or yes
-Link of project: https://excuse-or-yes.vercel.app/
+
+For a live experience, visit my [online demo](https://excuse-or-yes.vercel.app/).
