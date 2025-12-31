@@ -11,7 +11,7 @@
 <br/>
 
 ## 🌐 Demo and Design
-- **Live Demo**: Experience the app live with this [online demo](https://ap-excuse-or-yes.vercel.app/).
+- **Live Demo**: Experience the app live with this [online demo](https://amelia-excuse-or-yes.vercel.app/).
 
 <br/>
 
